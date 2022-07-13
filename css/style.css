@@ -1,0 +1,414 @@
+body {
+    background-color: #424242;
+    display: flex;
+    padding-top: 20px;
+    padding-left: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+/* custom checkbox */
+
+.custom-checkbox {
+    width: 176px;
+    height: 309px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.custom-checkbox_form {
+    margin: 20px;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+
+.custom-checkbox_legend {
+    margin-top: 21px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family:'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.custom-checkbox_form label:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.custom-checkbox_form label {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    display: flex;
+    font-family:'Open Sans', 'Helvetica Neue', sans-serif;
+    cursor: pointer;
+}
+
+input[type = checkbox] {
+    display: none;
+}
+
+input[type = checkbox] + span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 9px;
+    position: relative;
+    border-radius: 3px;
+    border: 1px solid #999;
+}
+
+input[type = checkbox] + span:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('../img/tick.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0;
+    transition: opacity, border-colar 0.2s ease-in-out;
+}
+
+input[type = checkbox]:checked + span:before {
+    opacity: 1;
+    border-color: #CCB26E;
+}
+
+input[type = checkbox]:checked + span {
+    border-color: #CCB26E;
+}
+
+/* custom select */
+
+.custom-select {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.select option {
+    padding-top: 20px;
+}
+
+
+.select option:first-child {
+    display: none;
+}
+
+.custom-select {
+    width: 176px;
+    border-radius: 10px;
+    /* margin-bottom: 293px; */
+}
+
+.choices.is-open .choices__inner{
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+/* закрытыйй\открытый селект */
+.choices__inner {
+    min-height: auto;
+    width: 171px;
+    border-radius: 10px;
+}
+
+.is-open .choices__inner {
+    outline: 1px solid #CCB26E;
+    border: none;
+}
+
+.choices[data-type*=select-one].is-open {
+    background-color: #fff;
+    width: 170px;
+    height: 40px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-left: 1px solid #CCB26E;
+    border-right: 1px solid #CCB26E;
+    margin-bottom: 263px;
+}
+
+.choices[data-type*=select-one]
+.choices__inner {
+    padding: 0;
+}
+/* текст в селекте */
+.choices__list--single,
+.is-open .choices__list--single {
+    width: 100%;
+    border: none;
+    font-size: 14px;
+    color: #333;
+    font-weight: 400;
+    padding: 9px 92px 11px 15px;
+}
+
+/* стрелочка */
+.choices[data-type*=select-one]::after {
+    content: '';
+    visibility: hidden;
+}
+
+.choices[data-type*=select-one].is-open::after {
+    content: '';
+    visibility: hidden;
+}
+
+.choices[data-type*=select-one]::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-bottom: 1px solid #666;
+    border-left: 1px solid #666;
+    position: absolute;
+    top: 13px;
+    right: 14.69px;
+    transform: rotate(-45deg);
+}
+
+.choices[data-type*=select-one].is-open::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-bottom: 1px solid #CCB26E;
+    border-left: 1px solid #CCB26E;
+    position: absolute;
+    top: 17px;
+    right: 14.69px;
+    transform: rotate(135deg);
+}
+
+/* рамка открытого селектора */
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+    width: 170px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    top: 40px;
+    border: 1px solid #CCB26E !important;
+    border-top: none !important;
+    margin-left: -1px;
+}
+
+.choices__list--dropdown
+.choices__item--selectable::after,
+.choices__list[aria-expanded]
+.choices__item--selectable::after {
+    content: '';
+}
+
+.choices__list--dropdown
+.choices__item--selectable,
+.choices__list[aria-expanded]
+.choices__item--selectable {
+    padding-right: 0;
+}
+
+.choices__list--dropdown
+.choices__item[data-value="Материал"],
+.choices__list[aria-expanded]
+.choices__item[data-value="Материал"]{
+    display: none;
+}
+
+/* yandex */
+
+
+[class*="ymaps-2"][class*="-ground-pane"] {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+  -webkit-filter: grayscale(100%);
+}
+
+#map {
+  margin-bottom: 20px;
+}
+
+/* tooltip */
+
+.tooltip {
+    padding: 20px 78px;
+    padding-left: 29px;
+    background-color: #fff;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.content {
+    margin-right: 0;
+    width: 268px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family:'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 23.8px;
+    color: #333;
+}
+
+.marker {
+    position: absolute;
+    cursor: pointer;
+    align-items: center;
+    bottom: 25px;
+    right: 103px;
+}
+
+.popup {
+    position: absolute;
+    padding: 7px 15px;
+    width: 133px;
+    background-color: #666;
+    color: #fff;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    margin-right: 0;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16.34px;
+    bottom: 50px;
+    right: 35px;
+}
+
+.popup::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    bottom: -4px;
+    align-self: center;
+    transform: rotate(45deg);
+    background-color: #666;
+    left: calc((100%-7.5px)/2);
+}
+
+
+
+.marker:hover + .popup,
+.marker:focus + .popup  {
+    opacity: 1;
+}
+
+.marker:hover path,
+.marker:focus path  {
+    fill: #CCB26E;
+}
+
+/* scroll */
+
+.custom-scroll {
+    height: 310px;
+    width: 339px;
+    background-color: #fff;
+    padding: 20px 30px;
+    padding-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    font-family:'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.simplebar-track.simplebar-vertica {
+    visibility: visible;
+}
+
+.simplebar-track.simplebar-horizontal {
+    display: none;
+}
+
+.simplebar-scrollbar,
+.simplebar-visible,
+.simplebar-scrollbar:before {
+    background-color: #CCB26E !important;
+    border-radius: 5px;
+}
+
+/* validation */
+
+.validation {
+    width: 381px;
+    height: 370px;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+
+.form__btn {
+    padding: 18.5px 53px;
+    background-color: #FF5C00;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+    margin-top: 21px;
+    border-radius: 10px;
+}
+
+.form-group:first-child {
+    margin-top: 18px;
+}
+
+.form-group:not(:first-child) {
+    margin-top: 31px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form input {
+    padding: 22px 20px;
+    width: 340px;
+    border-radius: 10px;
+}
+
+.js-validate-error-label {
+    visibility: hidden;
+    position: absolute;
+    top: 2px;
+}
+
+.form-group-name .js-validate-error-label + span::after {
+    content: 'Вы не ввели имя';
+    position: absolute;
+    bottom: 68px;
+    left: 15px;
+    color: #FF5C00;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.06px;
+    font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.form-group-tel .js-validate-error-label + span::after {
+    content: 'Введите  номер телефона';
+    position: absolute;
+    bottom: 68px;
+    left: 15px;
+    color: #FF5C00;
+    color: #FF5C00;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.06px;
+    font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.form-group-mail .js-validate-error-label + span::after {
+    content: 'Вы не ввели почту';
+    position: absolute;
+    bottom: 68px;
+    left: 15px;
+    color: #FF5C00;
+    color: #FF5C00;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.06px;
+    font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
